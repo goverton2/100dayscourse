@@ -1,0 +1,59 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+#Write your code below this line 👇
+import random
+
+human_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors."))
+comp_choice = random.randint(0,2)
+
+outcome = str(human_choice) + str(comp_choice)
+
+if human_choice == 0:
+  print(rock)
+elif human_choice == 1:
+  print(paper)
+else:
+  print(scissors)
+
+if comp_choice == 0:
+  print(f"Computer chose:\n {rock}")
+elif comp_choice == 1:
+  print(f"Computer chose:\n {paper}")
+else:
+  print(f"Computer chose:\n {scissors}")
+
+draws = ["00","11", "22"]
+wins = ["02","10", "21"]
+losses = ["20","10", "12"]
+
+if outcome in draws:
+  print("We ain't in Switzerland, buddy. Neutrality is not an option. Try again.")
+elif outcome in wins:
+  print("I always believed in you. Incredible win.")
+else:
+  print("I never believed in you. Embarrassing loss.")
